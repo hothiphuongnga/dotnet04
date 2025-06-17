@@ -1,0 +1,222 @@
+#region Kiểu dữ liệu
+//Kiểu dữ liệu data type
+/*
+những gì code ở đây sẽ không được chạy vì nó là comment/ chú thích/ note
+int: kiểu dữ liệu số nguyên, không có phần thập phân vd: 1 2 3 4 -1 -2 -3 -4 , có giá trị default là 0
+----SỐ THỰC
+    double: kiểu dữ liệu số thực, có phần thập phân vd: 36,7 ~15      default: 0.0
+    float: kiểu dữ liệu số thực, có phần thập phân, nhưng có độ chính xác thấp hơn double ~7 
+    decimal: kiểu dữ liệu số thực, có phần thập phân, nhưng có độ chính xác cao hơn double ~28
+char: kiểu dữ liệu ký tự, chỉ chứa một ký tự duy nhất vd: 'a' 'b' 'c' '1' '2' '3' '@' '#'     '0'
+ 
+var: khi chaỵ chương trình thì nó sẽ tự động suy luận kiểu dữ liệu của biến, dựa vào giá trị khởi tạo
+string: kiểu dữ liệu chuỗi, chứa nhiều ký tự, được đặt trong dấu ngoặc kép vd: "Xin chào" "Hello" "123" "abc" "@#$%^&*()"
+bool: kiểu logic  đúng sai  default là false
+
+*/
+#endregion
+
+#region Biến
+// Biến : hộp chứa dữ liệu, có tên và kiểu dữ liệu
+// Cú pháp
+// <kiểu dữ liệu> <tên biến> = <giá trị khởi tạo>;
+int tuoi = 25;
+double diem_so = 8.5;
+float nhietDo = 36.5f; // nhietDo, NhietDo, nhiet_do,  
+decimal luong = 10000.5m;
+char kyTu = 'A';
+// var: tự động suy luận kiểu dữ liệu
+var ten = "Tiến"; // kiểu dữ liệu là string
+bool ketNoi = true; // kiểu dữ liệu là bool (note csdl lưu true/false là 1/0)
+
+// Quy tắc đặt tên biến:
+// 1. Tên biến không được bắt đầu bằng số
+// 2. Tên biến không được chứa ký tự đặc biệt (ngoại trừ dấu gạch dưới _)
+// 3. Tên biến không được trùng với từ khóa của ngôn ngữ lập trình VD : int , double, if, ....
+// 4. Tên biến nên ngắn gọn, dễ hiểu, có ý nghĩa
+// 5. quy tắc camelCase: tên biến nên bắt đầu bằng chữ thường, và các từ sau nên viết hoa chữ cái đầu tiên VD: tenNguoiDung, soDienThoai, diemSoToan
+int ngayCuoiCungCuaNam2025 = 31; // tên biến quá dài, không nên đặt như vậy
+// int 1sdt = 123456789; // tên biến không được bắt đầu bằng số 
+// double flo@t = 3.14; // tên biến không được chứa ký tự đặc biệt
+// float double = 3.14f; // tên biến không được trùng với từ khóa của ngôn ngữ lập trình
+// nhập vào tên 
+//  chào tên đó bằng  thứ tiếng Anh, tiếng Việt
+// Console.Write("Hãy nhập tên của bạn: "); // 
+// string? yourName = Console.ReadLine(); // đọc dữ liệu từ bàn phím, trả về kiểu string
+// // biến yourName có kiểu dữ liệu là string (chuỗi) và có thể chứa giá trị null (không có giá trị) vì sử dụng dấu hỏi (?) sau kiểu dữ liệu string
+// Console.WriteLine("Hello " + yourName);
+// Console.WriteLine($"Xin chào  {yourName}");
+
+
+#endregion
+
+#region Toán tử số học
+/*
+ +, - ,*, /
+ % : phép chia lấy dư
+*/
+int a = 10;
+int b = 3;
+int tong = a + b; // phép cộng
+int hieu = a - b; // phép trừ
+int tich = a * b; // phép nhân
+int thuong = a / b; // phép chia
+int chiaLayDu = a % b; // phép chia lấy dư
+// chiếm dụng bộ nhớ tạm ram , nên nếu không cần dùng lại thì không cần khai báo
+Console.WriteLine($"Kết quả của {a} + {b} là: {tong}"); // 13
+Console.WriteLine($"Kết quả của {a} - {b} là: {hieu}"); // 7
+Console.WriteLine($"Kết quả của {a} * {b} là: {tich}"); // 30
+Console.WriteLine($"Kết quả của {a} / {b} là: {thuong}"); // 3
+Console.WriteLine($"Kết quả của {a} % {b} là: {a % b}"); // 1
+
+
+//Toán tử gán
+/*
+=   : gán giá trị sau dấu "=" cho biến phía trước
++=  : "vừa cộng vừa gán", a += b tương đương với a = a + b
+-=  : "vừa trừ vừa gán", a -= b tương đương với a = a - b
+*=  : "vừa nhân vừa gán", a *= b tương đương với a = a * b
+/=  : "vừa chia vừa gán", a /= b tương đương với a = a / b
+%=  : "vừa chia lấy dư vừa gán", a %= b tương đương với a = a % b
+*/
+
+int age = 25;
+// qua năm sau thì tuổi sẽ tăng lên 1
+// age = 26;
+// age = age + 1; // tăng tuổi lên 1
+age += 1; // tương đương với age = age + 1;
+
+Console.WriteLine($"Kết quả của {a} += {b} là: {a += b}");
+Console.WriteLine($"Kết quả của {a} -= {b} là: {a -= b}");
+Console.WriteLine($"Kết quả của {a} *= {b} là: {a *= b}");
+Console.WriteLine($"Kết quả của {a} /= {b} là: {a /= b}");
+Console.WriteLine($"Kết quả của {a} %= {b} là: {a %= b}");
+
+
+
+// Toán tử tăng giảm
+// ++ : tăng giá trị của biến lên 1
+// -- : giảm giá trị của biến xuống 1
+// thang++ :  hậu tố tăng, sử dụng giá trị cũ , sau đó mới tăng lên
+// ++thang : tiền tố tăng, tăng trước rồi mới sử dụng giá trị mới
+int thang = 6;
+int thang2 = 6;
+Console.WriteLine(++thang); // in ra 7
+Console.WriteLine(thang2++); //in ra 6, in lúc chưa tăng , sau khi sử dụng rồi thì mới tăng lên 1
+Console.WriteLine(thang2); // in ra 7,
+
+// VÍ DỤ //
+/*
+a = 10;
+a++? //10 sau đó tăng 1 ở lần sử dụng sau
+++a?// 11 + 1=>12
+--a? //11
+a--; // 11
+*/
+//value type không thay đổi giá trị của biến gốc khi gán cho biến mới
+// reference type thay đổi giá trị của biến gốc khi gán cho biến mới
+thang2 = 6; // thay đổi giá trị của thang2
+int thang3 = thang2; // thang3 = 6
+// tạo ra 1 bản sao của thang2 và gán cho thang3
+thang3 = 100; 
+Console.WriteLine("thang2: " + thang2); // in ra 6
+Console.WriteLine("thang3: " + thang3); // in ra 100
+
+
+
+// string của reference type
+
+// string trong c# là bất biến (immutable), nghĩa là khi bạn thay đổi giá trị của một chuỗi, nó sẽ tạo ra một chuỗi mới thay vì thay đổi chuỗi cũ.
+string tenNguoiDung = "Công Danh"; // chuỗi là reference type
+string tenNguoiDung2 = tenNguoiDung; // tennguoiDung2 = "Công Danh"
+tenNguoiDung2 = "Nhật Nam";
+
+Console.WriteLine("tenNguoiDung: " + tenNguoiDung); // in ra Công Danh
+Console.WriteLine("tenNguoiDung2: " + tenNguoiDung2); // in ra Nhật Nam
+
+// toán tử null-coalescing
+// ? có thể là null
+int? soDienThoai = null;
+soDienThoai = 111;
+
+//  ?? nếu soDienThoai là null thì gán giá trị 222 cho sdt2, nếu không thì gán giá trị của soDienThoai cho soDienThoai2
+int soDienThoai2 = soDienThoai ?? 222; // 
+// TH1:  soDienThoai = null thì gán giá trị 222 cho soDienThoai2, 
+// TH2:   gán giá trị của soDienThoai cho soDienThoai2
+Console.WriteLine("sdt khi sdt là null: " + soDienThoai); // in ra null
+Console.WriteLine("sdt2 khi sdt là null: " + soDienThoai2); // in ra 222
+// ??=
+int? soNha = 112;
+soNha ??= 113; // không làm gì hết
+//TH1: soNha=null thì gán cho soNha giá trị mới là 113
+//TH2: soNha!=null thì không làm gì cả
+Console.WriteLine($"số nhà khi soNha là 112: {soNha}"); // in ra 113
+
+// int? sodien; // nhận giá trị default 
+// int sodien2 = sodien ?? 0; // nếu sodien là null thì gán giá trị 0 cho 
+// sodien2, nếu không thì gán giá trị của sodien cho sodien2
+// Console.WriteLine("sodien", sodien); // in ra null
+
+#endregion
+
+#region chuyển đổi kiểu dữ liệu
+// có 3 kiểu
+// 1. Chuyển đổi ngầm định (implicit conversion): 
+// KDL(kiểu dữ liệu) từ nhỏ sang lơn
+ int number1 = 10;
+double number2 = number1; // chuyển đổi từ int sang double, không mất dữ liệu
+// number2 = 10.0; // number2 là double, nên có phần thập phân
+Console.WriteLine("number2: " + number2.GetType()); // in ra 10.0
+// 2. Chuyển đổi tường minh (explicit conversion):
+// KDL từ lớn sang nhỏ
+double diemTB = 7.95; // double có phần thập phân // khả năng mất dữ liệu
+int diemTBInt = (int)diemTB; // chuyển đổi từ double sang int, sẽ làm mất phần thập phân
+Console.WriteLine("diemTBInt: " + diemTBInt); // in ra 7
+
+// 3. Chuyển đổi sử dụng phương thức (method conversion):
+// Chuyển đổi từ string sang int
+string soString = "123"; // chuỗi chứa số
+int soInt = int.Parse(soString);
+// int sostring2 = 3;
+// double soInt2 = sostring2;
+Console.WriteLine("soInt: " + soInt + " có kiểu " + soInt.GetType()); // in ra 123
+
+//// dùng convert chuyển từ string sang int
+/// 
+int soInt3 = Convert.ToInt32(soString); // chuyển đổi từ string sang int, nếu không thể chuyển đổi sẽ ném ra ngoại lệ => 123
+// nếu soString không phải là số thì sẽ ném ra ngoại lệ
+Console.WriteLine("soInt3: " + soInt3 + " có kiểu " + soInt3.GetType()); // in ra 123
+// có cách nào để không bị ngưng chương trình khi chuyển đổi không thành công không?
+// sử dụng TryParse
+Console.WriteLine("Muốn nhập gì thì nhập : ");
+string soString2 = Console.ReadLine();
+
+
+int soInt4;
+bool isConvert = int.TryParse(soString2, out soInt4); // chuyển đổi từ string sang int, nếu không thể chuyển đổi sẽ trả về false
+// không ném ra ngoại lệ (lỗi), mà trả về false nếu không thể chuyển đổi được 
+// TH1: soString là số thì isConvert = true, soInt4 = giá trị của soString
+if (isConvert)
+{
+    Console.WriteLine("Chuyển đổi thành công: " + soInt4);
+}
+else
+{
+    Console.WriteLine("Chuyển đổi không thành công");
+}
+
+
+
+int soNguyen1 = 10;
+int soNguyen2 = 3;
+// phép hai số nguyên -> kết quả là số nguyên
+var phepChia = soNguyen1 / soNguyen2; // phép chia 2 số nguyên, sẽ trả về số nguyên 
+Console.WriteLine("Phép chia 2 số nguyên: " + phepChia + "kiểu : " + phepChia.GetType()); // in ra 3, vì phép chia 2 số nguyên sẽ trả về số nguyên
+
+// nếu muốn phép chia 2 số nguyên trả về số thực thì phải ép kiểu
+// trong phép chia nếu số hạng nào có bộ nhớ KDL lớn hơn thì sẽ trả về KDL lớn hơn
+double sothuc1 = soNguyen1; // ép kiểu từ int sang double
+var phepChiaThuc = sothuc1 / soNguyen2; // chia số thực cho số nguyên
+Console.WriteLine($"phép chia trả ra số thực : {phepChiaThuc} kiểu : {phepChiaThuc.GetType()}"); // in ra 3.3333333333333335, 
+
+#endregion
